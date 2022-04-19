@@ -44,6 +44,3 @@ class Password(object):
 
         return password
 
-
-
-
