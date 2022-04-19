@@ -5,7 +5,7 @@ import random
 
 class Password(object):
     @staticmethod
-    def validate(pwd: str):
+    def validate(pwd: str) -> bool:
         conds = {
             "- The password must contain both lowercase and uppercase characters":
                 lambda s: re.search(r"[A-Z]+", s) and re.search(r"[a-z]+", s),
@@ -31,7 +31,7 @@ class Password(object):
         return valid
 
     @staticmethod
-    def generate(length: int):
+    def generate(length: int) -> str:
         lower = string.ascii_lowercase
         upper = string.ascii_uppercase
         num = string.digits
