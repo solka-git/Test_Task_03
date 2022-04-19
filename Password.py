@@ -14,10 +14,12 @@ class Password(object):
                 lambda s: re.search(rf"[{string.punctuation}]+", s),
             "- The password must be at least 14 characters long": lambda s: len(s) >= 14
         }
+
         valid = True
         for name, cond in conds.items():
             if not cond(pwd):
                 valid = False
+
         if valid:
             print("Strong password")
         else:
@@ -39,6 +41,7 @@ class Password(object):
 
         temp = random.sample(all_parts, length)
         password = "".join(temp)
+
         return password
 
 
